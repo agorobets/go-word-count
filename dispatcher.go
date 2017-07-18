@@ -17,7 +17,10 @@ type Dispatcher struct {
 func NewDispatcher(counter *Counter, maxTokens int) *Dispatcher {
 	tokens := make(chan struct{}, maxTokens)
 	for i := 0; i < maxTokens; i++ {
-		tokens <- struct{}{}
+		select {
+		case tokens <- struct{}{}:
+		default:
+		}
 	}
 
 	return &Dispatcher{
