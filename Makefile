@@ -12,14 +12,6 @@ install:
 run: install
 	go-word-count
 
-.PHONY: test
-test:
-	go test `go list ./... | grep -v /vendor/`
-
-.PHONY: race
-race:
-	go test -race `go list ./... | grep -v /vendor/`
-
 .PHONY: doc
 doc:
 	godoc -http=":6060"

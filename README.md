@@ -1,12 +1,14 @@
+# Overview
+
+go-word-count reads list of urls from stdin, loads page content and counts number of 'Go' string for each loaded page. 
+
 # Install
 Put go-word-count source directory inside it. Example:
 
     $ git clone https://github.com/agorobets/go-word-count src/go-word-count #
     $ cd src/go-word-count
 
-Now you haveproject with docker-compose.yml.
+To compile and run app execute:
 
-    $ docker-compose run go-word-count
-
-Will launch go-word-count and its dependencies
+    $ echo -e "<list of urls>" | make run
 
